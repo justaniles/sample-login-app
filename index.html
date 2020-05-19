@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .form-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-element {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>Sample login app</h1>
+        <form class="form-container">
+          <div class="form-element">
+            <label>User name</label>
+            <input type="text" />
+          </div>
+          <div class="form-element">
+            <label>Password</label>
+            <input type="password" />
+          </div>
+          <div class="form-element">
+            <label>Company code</label>
+            <input type="text" />
+          </div>
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
