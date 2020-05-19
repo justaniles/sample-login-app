@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="container">
-      <div>
+      <div id="login-form">
         <h1>Sample login app</h1>
         <form class="form-container">
           <div class="form-element">
@@ -39,5 +39,30 @@
         </form>
       </div>
     </div>
+    <script>
+      function refresh() {
+        location.reload();
+      }
+
+      const submitButton = document.getElementById("submit");
+
+      submitButton.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const fields = document.getElementsByClassName("form-element");
+        const fieldValues = [];
+        for (let i = 0; i < fields.length; i++) {
+          const field = fields[i];
+          const labelValue = field.querySelector("label").innerText;
+          const inputValue = field.querySelector("input").value;
+          fieldValues.push(`${labelValue}: \'${inputValue}\'`);
+        }
+
+        document.getElementById("login-form").innerHTML =
+          "<h1>Simulated login with:</h1>" +
+          `<pre>${fieldValues.join("<br>")}</pre>` +
+          "<br><a href='#' onclick='refresh()'><i>Refresh to start over</i></a>";
+      });
+    </script>
   </body>
 </html>
